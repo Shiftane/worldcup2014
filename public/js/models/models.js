@@ -1,21 +1,22 @@
-window.Wine = Backbone.Model.extend({
+window.Round = Backbone.Model.extend({
 
-    urlRoot: "/wines",
+    urlRoot: "/rounds",
 
-    idAttribute: "_id",
+    idAttribute: "team2",
 
     initialize: function () {
+        alert("Init Round");
         this.validators = {};
 
-        this.validators.name = function (value) {
+        this.validators.team1 = function (value) {
             return value.length > 0 ? {isValid: true} : {isValid: false, message: "You must enter a name"};
         };
 
-        this.validators.grapes = function (value) {
+        this.validators.team2 = function (value) {
             return value.length > 0 ? {isValid: true} : {isValid: false, message: "You must enter a grape variety"};
         };
 
-        this.validators.country = function (value) {
+        this.validators.date = function (value) {
             return value.length > 0 ? {isValid: true} : {isValid: false, message: "You must enter a country"};
         };
     },
@@ -42,21 +43,22 @@ window.Wine = Backbone.Model.extend({
     },
 
     defaults: {
-        _id: null,
-        name: "",
-        grapes: "",
-        country: "USA",
-        region: "California",
-        year: "",
-        description: "",
-        picture: null
+        id: null,
+        team1: "",
+        team2: "",
+        date: null
     }
 });
 
-window.WineCollection = Backbone.Collection.extend({
+window.RoundCollection = Backbone.Collection.extend({
 
-    model: Wine,
+    model: Round,
 
-    url: "/wines"
+    url: "/rounds",
+
+    initialize : function(){
+        alert ("INIT RoundCollection");
+    }
+
 
 });

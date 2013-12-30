@@ -22,9 +22,14 @@ var AppRouter = Backbone.Router.extend({
     },
 
 	list: function(page) {
+        alert("in LIST function");
         var p = page ? parseInt(page, 10) : 1;
+        alert("roundList Creation in progress...");
         var roundList = new RoundCollection();
+        alert("roundList Created");
+
         roundList.fetch({success: function(){
+            alert("Fetch success");
             $("#content").html(new RoundListView({model: roundList, page: p}).el);
         }});
         this.headerView.selectMenuItem('home-menu');

@@ -1,5 +1,7 @@
 var express = require('express');
-var worldcup = require('/routes/wc2014');
+var path = require('path');
+var http = require('http');
+var worldcup = require('./routes/wc2014');
 var app = express();
 
 // ———— CONFIGURATION
@@ -22,12 +24,8 @@ app.configure('production', function(){
   app.set('db uri', 'n.n.n.n/prod');
 })
 
-// ROUTES
-
 // HOME PAGE
-app.get('/login', function(req, res){
-        res.send('Hello World');
-});
+
 // Rounds
 app.get('/rounds', worldcup.rounds);
 // Login
