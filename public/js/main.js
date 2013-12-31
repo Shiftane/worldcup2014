@@ -31,7 +31,10 @@ var AppRouter = Backbone.Router.extend({
         roundList.fetch({success: function(){
             alert("Fetch success");
             $("#content").html(new RoundListView({model: roundList, page: p}).el);
-        }});
+        },
+	error : function(collection, response, options){
+		alert("error : " + collection + response + options);
+	}});
         this.headerView.selectMenuItem('home-menu');
     },
 

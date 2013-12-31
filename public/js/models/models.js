@@ -1,10 +1,10 @@
 window.Round = Backbone.Model.extend({
 
-    urlRoot: "/rounds",
+/*    urlRoot: "/rounds",*/
 
-    idAttribute: "team2",
+//    idAttribute: "id",
 
-    initialize: function () {
+/*    initialize: function () {
         alert("Init Round");
         this.validators = {};
 
@@ -47,18 +47,14 @@ window.Round = Backbone.Model.extend({
         team1: "",
         team2: "",
         date: null
-    }
+    }*/
 });
 
 window.RoundCollection = Backbone.Collection.extend({
 
     model: Round,
 
-    url: "/rounds",
-
-    initialize : function(){
-        alert ("INIT RoundCollection");
-    }
+    url: "/rounds"
 
 
 });
