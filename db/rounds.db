@@ -1,1 +1,1 @@
-{"key":"rounds","val": "[{'id':1, 'team1':'Bresil','team2':'Suisse','date':'2013-06-06 15:00'}]"}
+{"key":"rounds","val": [{"id":1, "team1":"Bresil","team2":"Suisse","date":"2013-06-06 15:00"}]}
